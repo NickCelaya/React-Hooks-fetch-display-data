@@ -4,7 +4,7 @@ import nick from './nick.svg';
 import Cristobal from './Components/Nick'
 import './App.css';
 
-// const data = ['Elk', 'Deer', 'Moose', 'Sheep']
+
 
 
 const App = () => {
