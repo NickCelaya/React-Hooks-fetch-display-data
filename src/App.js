@@ -10,6 +10,7 @@ import './App.css';
 const App = () => {
   const [data] = useState(['Elk', 'Deer', 'Moose', 'Sheep', 'Bear', 'Pheasant'])
   const [starWars, setStarWars] = useState([])
+  const [truthy, setTruthy] = useState(true)
 
 useEffect( () => {
   const getData = async () => {
@@ -20,6 +21,11 @@ useEffect( () => {
 
   getData()
 }, [])
+
+
+  const toggle = () => {
+    setTruthy(!truthy)
+}
 
 console.log({starWars}, 'nick')
 
@@ -40,7 +46,8 @@ console.log({starWars}, 'nick')
           Learn React
         </a>
         <Cristobal test = {starWars} data = {data}/>
-        <h1 className="testClass">Hi Nick</h1>
+        <button onClick={toggle}>Toogle Greeting </button>
+        {truthy && <h1>Hello Nick</h1> }
         <a className="youTube" href="https://www.youtube.com/watch?v=pVowWA7OJVk">Go to youtube</a>
       </header>
     </div>
@@ -48,3 +55,7 @@ console.log({starWars}, 'nick')
 }
 
 export default App;
+
+
+// <button onClick={() => setShowText(!showText)}>Toggle Text</button>
+// {showText && <div>This text will show!</div>}
